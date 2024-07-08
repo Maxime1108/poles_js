@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structures conditionnelles</title>
+</head>
+
+<body>
+    <h1>Structures conditionnelles</h1>
+    <h2>IF ELSE</h2>
+    <script>
+        // Demande à l'utilisateur de taper un nombre
+        let nb = prompt("Tapez un nombre, s'il vous plaît");
+
+        /*
+        La structure conditionnelle IF permet d'exécuter du code si une condition est vraie.
+        Si la condition est fausse, ce code ne sera pas exécuté.
+        SYNTAXE : 
+        if (condition) {
+            ...bloc d'instructions...
+        }
+        'condition' est une expression de type booléen.
+        'bloc d'instructions' est une suite de lignes de code.
+        */
+
+        // Affiche une ligne horizontale pour séparer les sections
+        document.write("<hr>");
+
+        // Vérifie si le nombre est supérieur ou égal à 10
+        if (nb >= 10) {
+            // Si oui, affiche un message indiquant que le nombre est supérieur à la moyenne
+            document.write("<p>" + nb + " : Vous avez plus que la moyenne</p>");
+        } else {
+            // Sinon, affiche un message indiquant que le nombre n'est pas supérieur à la moyenne
+            document.write("<p>" + nb + " : Vous n'avez pas la moyenne</p>");
+        }
+
+        // Demande à l'utilisateur de taper son âge
+        let age = prompt("Quel est votre âge ?");
+        let texte;
+
+        /*
+        La structure conditionnelle IF ELSE IF permet de vérifier plusieurs conditions de manière séquentielle.
+        SYNTAXE : 
+        if (condition1) {
+            ...bloc d'instructions...
+        } else if (condition2) {
+            ...bloc d'instructions...
+        } else {
+            ...bloc d'instructions...
+        }
+        */
+
+        // Vérifie l'âge de l'utilisateur pour déterminer s'il est mineur, adulte ou vieux
+        if (age < 18) {
+            texte = "Vous êtes mineur";
+        } else if (age < 60) {
+            texte = "Vous êtes adulte";
+        } else {
+            texte = "Vous êtes vieux";
+        }
+
+        // Affiche le texte correspondant à l'âge de l'utilisateur
+        document.write("<p>" + texte + "</p>");
+
+        // Demande à l'utilisateur de taper un nombre entre 1 et 10
+        let nombre = prompt("Tapez un nombre entre 1 et 10, s'il vous plaît");
+
+        /*
+        EXERCICE :  
+        1. Demandez à l'utilisateur de taper un nombre entre 1 et 10
+        2. Le nombre à deviner est 3,
+            si l'utilisateur a tapé 3, affichez "3 : vous avez gagné"
+            si c'est inférieur, affichez "Trop petit"
+            si c'est supérieur, affichez "Trop grand"
+        */
+
+        // Le nombre à deviner
+        const nombreADeviner = 3;
+
+        // Vérifie si le nombre tapé par l'utilisateur est égal, inférieur ou supérieur au nombre à deviner
+        if (nombre == nombreADeviner) {
+            // Si le nombre est égal à 3
+            document.write("<p>" + nombre + " : Vous avez gagné</p>");
+        } else if (nombre < nombreADeviner) {
+            // Si le nombre est inférieur à 3
+            document.write("<p>" + nombre + " : Trop petit</p>");
+        } else {
+            // Si le nombre est supérieur à 3
+            document.write("<p>" + nombre + " : Trop grand</p>");
+        }
+    </script>
+
+    <h2>SWITCH</h2>
+    <script>
+
+        let jour = prompt("quel est le jours de la semeine");
+        switch (jour) {
+            case "lundi":
+                text = " c'est le debut de la semaine";
+                break;
+
+            case "mercredi":
+                text = " c'est le milieu de la semaine...";
+                break;
+
+            case "vendredi":
+            case "jeudi":
+                text = " Bientot le week-end";
+                break;
+
+            case "mardi":
+                text = "encore 4 jours"
+                break;
+
+            default:
+                text = "WEEK-END!!!";
+
+        }
+
+        document.write(text);
+    </script>
+
+    <h2>OPERATEUR TERNAIRE ou IF INLINE</h2>
+    <script>
+
+        let texte1;
+        let a = 5;
+        if (a < 5) {
+            texte1 = "A est inférieur à 5";
+        } else {
+            texte1 = "A est supérieur ou égal à 5";
+        }
+        document.write("<p>" + texte1 + "</p>");
+        // La ligne suivante est équivalente au if précédent :
+        texte1 = a < 5 ? " A est inférieur à 5" : "A est supérieur ou égal à 5";
+        document.write("<P>" + texte1 + "</p>");
+        // La ligne suivante est équivalente au if précédent :
+        texte1 = a < 5 ? "A est inférieur à 5" : "A est supérieur ou égal à 5";
+        document.write("<p>" + texte1 + "</p>");
+
+        /*
+        L'opérateur ternaire permet de définir une expression dont la valeur dépend d'une condition.
+        Syntaxe : 
+        condition ? valeur_si_condition_vraie : valeur_si_condition_fausse
+        */
+    </script>
+</body>
+
+</html>

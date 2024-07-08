@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Variables</h1>
+
+    <script>
+        // déclaration de la varaible avec le mot-célé 'var'
+        var prenom;
+        // déclaration de la varaible avec le mot-célé 'let'
+        let nombre;
+        /* En JS, on peut déclarer une variable sans utiliser de mot-clé */
+
+        // délaration de la variable adresse sans mot-clé
+        adresse = "4 allée du petit tonneau";
+
+        /* AFFECTATION
+        donner une valeur à une variable 
+        Opérateur : 
+        =
+        Syntaxe :
+        variable = valeur;
+        */
+        prenom = "Maxime";
+        document.write("Bonjour " + prenom + "<br>");
+
+        // On ne peut pas utliser une varaible qui n'a pas été initialisé 
+        // (variable déclarée mais aucune valeur n'a été affecté)
+        document.write("Le nombre est " + nombre + "<br>")
+
+        // On ne peut pas utiliser une varibale qui n'a pas été déclarée (erreur)
+        // document.write("La ville de " + ville);
+
+        let = 33; // déclaration et affectation dans la même instruction
+
+        // TYPES DE DONNÉES
+        /*
+        1. CHAÎNE DE CARACTÈRES : string
+        Une expression de type sting est entourée de "" (guillemets ou double quote) ou de '' (apostrophes, single quote).
+
+        */
+        let texte = "l'arbre qui câche la \"forêt\"";
+        document.write(texte + "<br>");
+        texte = 'l\'avion';
+        document.write(texte + "<br>");
+
+        /*
+        2. NUMÉRIQUE : number
+        Une expression numérique n'est pas délimitée par des caractères
+        */
+        age = 52;
+
+        /*
+        3. BOOLÉEN : boolean
+     Une expression booléenne ne peut prendre que 2 valeurs : 
+     true, false
+        */
+        let vraiFaux = true;
+        vraiFaux = false;
+    </script>
+</body>
+
+</html>

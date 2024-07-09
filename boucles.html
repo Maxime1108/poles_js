@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boucle</title>
+</head>
+
+<body>
+    <h1>Structures itératives</h1>
+    <h2>Boucle FOR</h2>
+    <p>Pour exécuter un certain nombre de fois une suite d'instructions, on utilise la boucle FOR. On va définir une
+        variable qui va servir à compter le nombre de
+        tout (=itération). On va définir une condition qui va permettre d'arrêter la boucle, quand cette condition sera
+        fausse. On va définir un incrémentation (ou décrementation) de la variable qui sert à compter dles itérations.
+    </p>
+
+    Syntaxe :
+    <p><code>for(<i>initialisation</i> ; <i>condition</i> ; <i>incrémentation</i>) {<br> <i>... bloc d'instructions ...</i>} </code>
+    </p>
+    </p>
+    <script>
+        // afficher les 10 premiers nombres
+        for (let i = 0; i < 10; i++) {
+            document.write("<p>" + i + "</p>");
+        }
+    </script>
+
+    <h2>Boucle WHILE (tant que)</h2>
+    <ul>
+        <li>
+            <p>Syntaxe :</p>
+            <code><pre>
+while( <cite>condition</cite> ) {
+    <cite>...bloc d'instructions ...</cite>
+}
+            </pre></code>
+        </li>
+
+        <li>
+            <p>Explication :</p>
+            Tant que la <i>condition</i> est vrai, on continue la boucle.
+            ⚠ aux boucles infinies
+
+        </li>
+    </ul>
+
+    <script>
+        let i = 0;
+        while (i < 10) {
+            // i++;
+            document.write(i++ + " ")
+            if (i >= 10) {
+                break
+                //break: permet de sortir d'une boucle (for, while)
+            }
+        }
+
+        document.write("<br>")
+
+        i = 0;
+        while (i < 10) {
+            // i++;
+            document.write(++i + " ")
+            if (i >= 10) {
+                break
+
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

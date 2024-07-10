@@ -1,30 +1,57 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boucle</title>
+    <title>Boucles</title>
 </head>
 
 <body>
     <h1>Structures itératives</h1>
     <h2>Boucle FOR</h2>
     <p>Pour exécuter un certain nombre de fois une suite d'instructions, on utilise la boucle FOR. On va définir une
-        variable qui va servir à compter le nombre de
-        tout (=itération). On va définir une condition qui va permettre d'arrêter la boucle, quand cette condition sera
-        fausse. On va définir un incrémentation (ou décrementation) de la variable qui sert à compter dles itérations.
-    </p>
+        variable qui va servir à compter le nombre de tour (=itération). On va définir une condition qui va permettre
+        d'arrêter la boucle, quand cette condition sera fausse. On va définir une incrémentation (ou décrementation) de
+        la variable qui sert à compter les itérations.</p>
 
     Syntaxe :
-    <p><code>for(<i>initialisation</i> ; <i>condition</i> ; <i>incrémentation</i>) {<br> <i>... bloc d'instructions ...</i>} </code>
+    <p><code>for(<i>initialisation</i> ; <i>condition</i> ; <i>incrémentation</i>) {<br> <i>... bloc d'instructions ...</i><br>} </code>
     </p>
-    </p>
+
     <script>
         // afficher les 10 premiers nombres
-        for (let i = 0; i < 10; i++) {
-            document.write("<p>" + i + "</p>");
+        // for(let i=0 ; i < 10 ; i++) {
+        //     document.write("<p>" + i + "</p>");
+        // }
+
+        for (let i = 1; i < 11; i++) {
+            document.write(i + " ");
         }
+        document.write("<br>");
+        for (let i = 0; i < 10; i++) {
+            document.write((i + 1) + " ");
+        }
+
+        document.write("<br>");
+        for (let i = 0; i < 10; i++) {
+            document.write((i++) + " ");
+        }
+
+
+
+        /*
+        i++;
+        i = i + 1;
+        i += 1;
+
+        i + 1;  // ⚠ ici la valeur de i ne change pas
+
+        i--;
+        i = i -1;
+        i -= 1;
+
+        */
     </script>
 
     <h2>Boucle WHILE (tant que)</h2>
@@ -45,32 +72,115 @@ while( <cite>condition</cite> ) {
 
         </li>
     </ul>
-
     <script>
         let i = 0;
-        while (i < 10) {
+        while (true) {
             // i++;
-            document.write(i++ + " ")
+            document.write(i++ + " ");
             if (i >= 10) {
-                break
-                //break: permet de sortir d'une boucle (for, while)
+                // break permet de sortir d'une boucle (for, while, ...)
+                break;
             }
         }
-
-        document.write("<br>")
-
+        document.write("<br>");
         i = 0;
-        while (i < 10) {
+        while (true) {
             // i++;
-            document.write(++i + " ")
+            document.write(++i + " ");
             if (i >= 10) {
-                break
-
+                // break permet de sortir d'une boucle (for, while, ...)
+                break;
             }
         }
+
+
 
     </script>
 
+    <h2>Boucle DO WHILE</h2>
+    <ul>
+        <li>
+            Boucle DO WHILE (faire tant que)
+            <code>
+<pre>
+    SYNTAXE :
+        do {
+            bloc d'instructions
+        } while (condition)
+
+    NB : la différence entre cette boucle et la boucle WHILE, c'est que la condition est testé après le 
+            bloc. Donc, quoiqu'il arrive, le bloc d'instructions sera exécuté au moins une fois pour la 
+            boulce DO WHILE.
+
+
+    En résumé, on utilise la boucle FOR lorsqu'on connaît le nombre d'itérations (=tours) à faire.
+    Si on ne sait pas combien de tours ou si la condition d'arrêt n'est pas lié au nombre de tour,
+    on utilise la boucle WHILE.
+    Si on doit exécuter le bloc d'instructions au moins 1 fois, quelque soit la valeur de la condition,
+    alors on utilise la boucle DO WHILE.
+
+    NB : les 3 boucles sont interchangeables si on définit bien la condition de sortie de la boucle.                    
+</pre>
+            </code>
+        </li>
+    </ul>
+
+    <script>
+        let j = 10;
+        while (j < 10) {
+            document.write(j++ + " - ");
+        }
+        document.write("<br>");
+
+        j = 10;
+        do {
+            document.write(j++ + " - ");
+        } while (j < 10);
+
+    </script>
+
+    <h2>FOREACH</h2>
+    <p>La boucle FOREACH est une boucle utilisée pour les tableaux dans
+        différents langages de programmation. En JS, cette boucle est liée
+        aux objets de type array.
+        <br>Syntaxe :
+    </p>
+    <code><pre>
+        <i>tableau</i>.forEach( function(valeur, indice) {
+            <i>... instructions ...</i>
+        })
+    </pre></code>
+
+    <p>Dans FOREACH, on va déclarer une fonction qui va s'appliquer sur toutes
+        les valeurs du tableau.</p>
+    <script>
+        let semaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
+        semaine.forEach(function (valeur, indice) {
+            document.write("La " + indice + "ème valeur du tableau est " + valeur);
+            document.write("<br>");
+        });
+    </script>
+
+    <h2>FOR OF</h2>
+    <p>Une autre version de la boucle FOREACH en JS est la boucle FOR OF</p>
+    <p>Syntaxe: </p>
+    <code>
+        <pre>
+            for(const <i>valeur</i> of <i>tableau</i>) {
+                <i>... instructions ...</i>
+            }
+        </pre>
+    </code>
+    <p>Pour chaque valeur du tableau, on va exécuter les instructions de la boucle.</p>
+    <script>
+        for (const jour of semaine) {
+            document.write(jour + "<br>");
+        }
+    </script>
+    <p>Ici on ne récupère pas les indices, uniquement les valeurs qui sont
+        affectées à une nouvelle variable (dans l'exemple, c'est la variable
+        <i>jour</i>).
+    </p>
 </body>
 
 </html>

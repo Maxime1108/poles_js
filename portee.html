@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portée des variables</title>
+    <script src="js/portee.js"></script>
+</head>
+
+<body>
+    <h1>Portée des variables (= scope)</h1>
+    <ul>
+        <li>Une variable déclarée dasn une fonction n'est accessible
+            que dans cette fonction. On dit que c'est une varaible locale à la
+            fonction.
+        </li>
+        <li>Une variable déclarée avec le mot clé <i>var</i> est une variable
+            globale. Elle est accessible partout.
+        </li>
+        <li>Une varaible déclarée avec le mot-clé <i>let</i> n'est accessible que
+            dans le blocl où elle a été délcarée. Un block est délimité par des {}
+            (accolades, curly barcket en anglais).
+            On ne peut redéclarer une variable déclarée avec les <i>let</i>
+            dans le même bloc.
+        </li>
+        <li>
+            Le mot <i>const</i> permet de déclarer des constantes.
+            Une constante est une variable dont la valeur ne peut pas
+            être modifiée.
+            Comme pour <i>let</i>, <i>const</i> a une portée de bloc.
+        </li>
+
+
+    </ul>
+</body>
+
+</html>

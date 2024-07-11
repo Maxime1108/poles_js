@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les objets</title>
+    <script src="js/objet.js"></script>
+</head>
+
+<body>
+    <script>
+        let t = ["1", 2];
+        document.write(t.length);
+
+    </script>
+
+    <p>Une variable de type object va être constitué de:
+
+    <ul>
+        <li>propriétés : ce sont des valeurs qui sont liées à l'objet</li>
+        <li>méthodes : ce sont des fonctions qui sont liées à l'objcet</li>
+    </ul>
+    Pour accéder aux propriétes ou aux méthodes d'un objet, on utilise le point <mark></mark>
+    </p>
+
+    <p>Par exemple, <i>push</i> est une méthode d'un objet de type Array.</p>
+    <p>En JS, les strings sont des objets</p>
+    <script>
+        let str = "test";
+        document.write("La longueur de la chaîne de caractères");
+        document.write("<mark> " + str + " </mark>");
+        document.write("est : " + str.length + " caractères<br>");
+        document.write(str.toUpperCase());
+        let s = str.toLowerCase();
+        console.log("Ceci est un string".length);
+        console.log(str.charAt(1));
+        console.log("Quel est la position de la lettre e ?", str.indexOf("e"));
+    </script>
+    <h2>Déclarer un objet</h2>
+    <script>
+        let personne = {
+            nom: "Cérien",
+            prenom: "Jean",
+            age: 33,
+        }
+
+        console.log(personne);
+        /* affichez le nom de la persone */
+        document.write(personne.nom);
+        /*Affichez "L'année de naissance est " suivi de l'année de naissance de la personne */
+
+
+        document.write("L'année de naissance est : " + (2024 - personne.age) + ".<br>")
+
+        /* Ecrire une fonction 'annNiassance' qui prend un objet Personne en argument et qui retourne l'année de naissance calculé à partir de la propriété 'age' de l'objet Personne
+        */
+
+        let anneeNaissance = function (p) {
+            return 2024 - p.age;
+
+            console.log("Age=" + anneeNaissance(personne));
+        }
+
+
+
+    </script>
+</body>
+
+</html>

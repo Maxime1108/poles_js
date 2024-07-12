@@ -32,8 +32,10 @@
             console.log(maDiv);
 
             maDiv.addEventListener("click", function (evt) {
-                alert("clic sur #madiv");
-                console.log(evt);
+                // alert("clic sur #madiv");
+                console.log(evt, this, maDiv);
+                this.innerHTML = "click sur la <strong>div</strong>";
+
             });
 
             maDiv.addEventListener("mouseenter", function (event) {
@@ -45,7 +47,16 @@
             maDiv.addEventListener("mouseleave", function (event) {
                 console.log("le curseur sort de la div");
                 this.style.backgroundColor = "red";
-            })
+            });
+
+
+            let divRouge = document.querySelector(".rouge:nth-child(2)");
+            divRouge.addEventListener("mousemove", function (event) {
+                console.log(event);
+                this.innerHTML = "<ul><li>X : " + event.clientX + "</li>"
+                    + "<li>Y : " + event.clientY + "</li></ul>";
+            });
+
         });
 
     </script>
